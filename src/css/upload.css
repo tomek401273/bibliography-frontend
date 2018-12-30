@@ -1,0 +1,32 @@
+.center-element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*position: relative;*/
+}
+.hiddenFileInput {
+    position: relative;
+    top: 80px;
+    border: 3px solid black;
+    border-style: dashed;
+    border-radius: 25px;
+    width: 600px;
+    height: 500px;
+    display: inline-block;
+    overflow: hidden;
+    background: #3580c0;
+    background-size: 75% 75%;
+}
+.upload-text {
+    color: white;
+    position: relative;
+    top: 200px;
+    font-weight: 900;
+    font-size: 20px;
+}
+.inputBut {
+    height: 500px;
+    width: 500px;
+    opacity: 0;
+    cursor: pointer;
+}

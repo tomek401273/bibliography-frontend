@@ -11,7 +11,8 @@ module.exports = {
     entry: {
         app: './src/js/app.js',
         users: './src/js/users.js',
-        login: './src/js/login.js'
+        login: './src/js/login.js',
+        upload: './src/js/upload.js'
     },
     output: {
         path: path.join(__dirname, "dist"),
@@ -86,6 +87,11 @@ module.exports = {
             filename: 'users.html',
             template: 'src/users.html',
             chunks: ['users']
+        }),
+        new HtmlWebpackPlugin({
+           filename: 'upload.html',
+           template: 'src/upload.html',
+           chunks: ['upload']
         }),
         new CleanWebpackPlugin(['dist'])
     ]

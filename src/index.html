@@ -29,7 +29,10 @@
         client.onreadystatechange = function () {
             if (this.readyState == this.HEADERS_RECEIVED) {
                 token = client.getResponseHeader("Authorization");
-                console.log(token)
+                console.log(token);
+                localStorage.setItem('token', token);
+                var tokeStored = localStorage.getItem('token');
+                console.log('stored Token: '+tokeStored);
             }
         }
     }
@@ -64,11 +67,12 @@
         client.onreadystatechange = function () {
             if (this.readyState == XMLHttpRequest.DONE) {
                 token = client.getResponseHeader("Authorization");
-                console.log(token)
-                console.log(client.response);
-                console.log(client.responseText);
-                console.log(client);
-                console.log(client.getResponseHeader("Authorization"));
+                console.log(token);
+
+                // console.log(client.response);
+                // console.log(client.responseText);
+                // console.log(client);
+                // console.log(client.getResponseHeader("Authorization"));
             }
         }
     }

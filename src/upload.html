@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Module</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <form method="POST" enctype="multipart/form-data" id="form">
+            <div class="center-element">
+        <span class="hiddenFileInput" id="file-span">
+            <p class="center-element upload-text" id="drag-and-drop-title">Drag and drop file here</p>
+            <input type="file" title="" class="inputBut" id="file" name="file" />
+        </span>
+            </div>
+
+        </form>
+        <div class="center-element">
+            <button class="btn btn-primary" id="upload-button" style="position: relative; top: 100px;">
+                Upload File
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
