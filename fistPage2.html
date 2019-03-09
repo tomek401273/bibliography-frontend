@@ -18,55 +18,64 @@
             }
         }
 
+
+        @media screen and (min-width: 768px) {
+            #logout-btn {
+                position: relative;
+                left: 50px;
+                width: 150px;
+            }
+        }
+
             #logout-btn {
             position: relative;
 
             width: 150px;
         }
-        .container {
-            position: relative;
-            top: 100px;
+        /*.container {*/
+            /*position: relative;*/
+            /*top: 100px;*/
 
-        }
-
+        /*}*/
+        /*#e9ecef*/
     </style>
 </head>
 <body>
-<div class="jumbotron ">
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-8">
-            <h1>Bibliography</h1>
-            <p>Right now check citation in your article or book</p>
-        </div>
-        <div class="col-4">
-            <!--</div>-->
-            <div class="col-xs-12 col-sm-4">
-                <div class="col-12">
-                    <div class="row">
-                        <div class="col-4"></div>
-                        <div class="col-4 ">
-                            <button class="btn btn-primary" id="logout-btn">Logout</button>
+
+    <div class="jumbotron ">
+        <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <h1>Bibliography</h1>
+                <p>Right now check citation in your article or book</p>
+            </div>
+            <div class="col-4">
+                <!--</div>-->
+                <div class="col-xs-12 col-sm-4">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-xl-4 col-sm-4 col-md-1"></div>
+                            <div class="col-xl-4 col-sm-4 col-md-1 ">
+                                <button class="btn btn-primary" id="logout-btn">Logout</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
     </div>
-
 </div>
 <div class="container ">
-    <div class="row ">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10 ">
-            <form id="form"  enctype="multipart/form-data" >
-                <div class="custom-file"  >
-                    <input type="file" class="custom-file-input" id="customFile"  name="file" >
-                    <label class="custom-file-label" for="customFile">Choose file</label>
-                </div>
-            </form>
-        </div>
+    <div class="col-sm-11 ">
+        <form id="form"  enctype="multipart/form-data" >
+            <div class="custom-file" >
+                <input type="file" class="custom-file-input" id="customFile"  name="file" >
+                <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+        </form>
     </div>
 </div>
 <button id="upload-button">Send</button>
