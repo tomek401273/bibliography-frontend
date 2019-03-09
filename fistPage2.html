@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>WelomePage</title>
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /*.row div {*/
+        /*border: solid red 1px;*/
+        /*}*/
+
+        @media screen and (max-width: 575px) {
+            #logout-btn {
+                position: relative;
+                left: 150px;
+                width: 150px;
+            }
+        }
+
+            #logout-btn {
+            position: relative;
+
+            width: 150px;
+        }
+        .container {
+            position: relative;
+            top: 100px;
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="jumbotron ">
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-8">
+            <h1>Bibliography</h1>
+            <p>Right now check citation in your article or book</p>
+        </div>
+        <div class="col-4">
+            <!--</div>-->
+            <div class="col-xs-12 col-sm-4">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4 ">
+                            <button class="btn btn-primary" id="logout-btn">Logout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div class="container ">
+    <div class="row ">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10 ">
+            <form id="form"  enctype="multipart/form-data" >
+                <div class="custom-file"  >
+                    <input type="file" class="custom-file-input" id="customFile"  name="file" >
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<button id="upload-button">Send</button>
+<!--<div class="col-xs-1 col-sm-12 center-element">-->
+    <!--<form method="POST" enctype="multipart/form-data" id="form">-->
+        <!--<div class="center-element">-->
+        <!--<span class="hiddenFileInput" id="file-span">-->
+            <!--<p class="center-element upload-text" id="drag-and-drop-title">Drag and drop file here</p>-->
+            <!--<input type="file" title="" class="inputBut" id="file" name="file"/>-->
+        <!--</span>-->
+        <!--</div>-->
+
+    <!--</form>-->
+<!--</div>-->
+<script>
+    document.getElementById('upload-button').addEventListener('click', function () {
+        console.log('dfdsf');
+        upload();
+    });
+
+
+    const token = localStorage.getItem('token');
+    console.log(token)
+
+    function upload() {
+        const token = localStorage.getItem('token');
+        console.log(token);
+        const http = new XMLHttpRequest();
+        http.open("POST", 'http://localhost:8080/upload/file');
+        // http.setRequestHeader('Content-Type', 'application/json');
+        http.setRequestHeader('Authorization', token);
+        http.onload = (event) => {
+            if (http.readyState === XMLHttpRequest.DONE && http.status === 200) {
+                const response = event.target.response;
+                console.log(response);
+            } else if (http.readyState === XMLHttpRequest.DONE && http.status !== 200) {
+                const errorResponse = JSON.parse(http.response);
+                console.log(errorResponse);
+            }
+        };
+        const fileToUplad = new FormData(document.getElementById('form'));
+        console.log(fileToUplad);
+        http.send(fileToUplad);
+
+    };
+
+    // $('#file').change(function () {
+    //     var y = document.getElementById('drag-and-drop-title');
+    //     console.log(y);
+    //     var file = $('#file')[0].files[0].name;
+    //     console.log(file)
+    //     console.log(y);
+    //     y.innerText = file;
+    // });
+
+
+    document.getElementById('customFile').addEventListener('change', () => {
+        // const oldTitle = document.getElementById('customFile');
+        // const newTitle = document.getElementById('customFile').value.split("\\").pop();
+        // oldTitle.innerText = newTitle;
+    });
+
+</script>
+</body>
+</html>

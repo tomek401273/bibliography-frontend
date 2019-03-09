@@ -28,6 +28,7 @@
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0"
+    "bootstrap": "^4.0.0",
+    "mdbootstrap": "^4.7.4"
   }
 }
