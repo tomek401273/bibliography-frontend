@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>WelomePage</title>
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    /*.row div {*/
+        /*border: solid red 1px;*/
+    /*}*/
+
+
+
+    .center-element {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .hiddenFileInput {
+        position: relative;
+        top: 80px;
+        border-style: dashed;
+        border-radius: 25px;
+        width: 300px;
+        height: 300px;
+        display: inline-block;
+        overflow: hidden;
+        background: #005bab;
+        background-size: 75% 75%;
+    }
+    .upload-text {
+        color: white;
+        position: relative;
+        top: 120px;
+        font-weight: 900;
+        font-size: 20px;
+    }
+    .inputBut {
+        position:relative;
+        bottom: 100px;
+        /*background-color: red;*/
+        padding: 300px;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    #logout-btn {
+        position: relative;
+        /*top: 10px;*/
+        /*right: 100px;*/
+        width: 150px;
+    }
+
+    @media screen and (min-width: 406px) and (max-width: 576px){
+        #logout-btn {
+            position: relative;
+            top: 10px;
+            right: 100px;
+            /*width: 150px;*/
+        }
+    }
+
+    @media screen and (min-width: 576px){
+        #logout-btn {
+            position: relative;
+            top: 10px;
+            right: 100px;
+            width: 150px;
+        }
+
+        .jumbotron {
+            width: 110%;
+        }
+
+        .hiddenFileInput {
+            position: relative;
+            top: 80px;
+            border: 3px solid black;
+            border-style: dashed;
+            border-radius: 25px;
+            width: 600px;
+            height: 500px;
+            display: inline-block;
+            overflow: hidden;
+            background: #3580c0;
+            background-size: 75% 75%;
+        }
+        .upload-text {
+            color: white;
+            position: relative;
+            top: 200px;
+            font-weight: 900;
+            font-size: 20px;
+        }
+        .inputBut {
+            height: 500px;
+            width: 500px;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+    }
+</style>
+</head>
+<body>
+<div class="jumbotron ">
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <h1>Bibliography</h1>
+                <p>Right now check citation in your article or book</p>
+            </div>
+            <!--<div class="col-4">-->
+                <!--<div class="row">-->
+                    <!--<div class="col-1">2</div>-->
+                    <!--<div class="col-5">-->
+                        <!--2-->
+                        <!--&lt;!&ndash;<button class="btn btn-primary">Logout</button>&ndash;&gt;-->
+                    <!--</div>-->
+                <!--</div>-->
+
+
+            <!--</div>-->
+            <div class="col-xs-12 col-sm-4">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4 ">
+                            <button class="btn btn-primary" id="logout-btn">Logout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <form method="POST" enctype="multipart/form-data" id="form">
+            <div class="center-element">
+        <span class="hiddenFileInput" id="file-span">
+            <p class="center-element upload-text" id="drag-and-drop-title">Drag and drop file here</p>
+            <input type="file" title="" class="inputBut" id="file" name="file" />
+        </span>
+            </div>
+
+        </form>
+        <div class="center-element">
+            <button class="btn btn-primary" id="upload-button" style="position: relative; top: 100px;">
+                Upload File
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
